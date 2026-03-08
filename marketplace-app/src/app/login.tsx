@@ -3,8 +3,8 @@ import { Text, TouchableOpacity, View } from "react-native";
 
 export default function Login() {
   return (
-    <View>
-      <Text>Login</Text>
+    <View className="flex-1 items-center justify-center">
+      <Text className="text-green-500">Login</Text>
 
       <TouchableOpacity onPress={() => router.push('/register')}>
         <Text>Register</Text>
