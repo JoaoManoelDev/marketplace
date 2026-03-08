@@ -2,10 +2,12 @@ import { Platform } from "react-native";
 
 import axios, { type AxiosInstance } from "axios";
 
+const DEV_HOST = "192.168.15.138";
+
 const getBaseURL = () => {
   return Platform.select({
-    ios: "http://localhost:3000",
-    android: "http://192.168.15.138:3000",
+    ios: `http://${DEV_HOST}:3001`,
+    android: `http://${DEV_HOST}:3001`,
   });
 }
 
@@ -18,7 +20,7 @@ if (__DEV__) {
 
 export class MarketplaceApiClient {
   private instance: AxiosInstance;
-  
+
   constructor() {
     this.instance = axios.create({
       baseURL: baseUrl,
